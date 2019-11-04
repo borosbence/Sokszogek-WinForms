@@ -38,7 +38,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelOldalC = new System.Windows.Forms.Label();
             this.textBoxOldalA = new System.Windows.Forms.TextBox();
             this.textBoxOldalB = new System.Windows.Forms.TextBox();
             this.textBoxOldalC = new System.Windows.Forms.TextBox();
@@ -119,6 +119,7 @@
             this.comboBoxSokszog.Name = "comboBoxSokszog";
             this.comboBoxSokszog.Size = new System.Drawing.Size(94, 21);
             this.comboBoxSokszog.TabIndex = 5;
+            this.comboBoxSokszog.SelectedIndexChanged += new System.EventHandler(this.comboBoxSokszog_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -127,7 +128,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelOldalC, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalA, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalB, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalC, 1, 2);
@@ -158,14 +159,14 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Oldal B:";
             // 
-            // label6
+            // labelOldalC
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Oldal C:";
+            this.labelOldalC.AutoSize = true;
+            this.labelOldalC.Location = new System.Drawing.Point(3, 122);
+            this.labelOldalC.Name = "labelOldalC";
+            this.labelOldalC.Size = new System.Drawing.Size(44, 13);
+            this.labelOldalC.TabIndex = 2;
+            this.labelOldalC.Text = "Oldal C:";
             // 
             // textBoxOldalA
             // 
@@ -196,6 +197,7 @@
             this.buttonSzamol.TabIndex = 2;
             this.buttonSzamol.Text = "Kiszámol";
             this.buttonSzamol.UseVisualStyleBackColor = true;
+            this.buttonSzamol.Click += new System.EventHandler(this.buttonSzamol_Click);
             // 
             // Form1
             // 
@@ -228,7 +230,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelOldalC;
         private System.Windows.Forms.TextBox textBoxOldalA;
         private System.Windows.Forms.TextBox textBoxOldalB;
         private System.Windows.Forms.TextBox textBoxOldalC;

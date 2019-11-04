@@ -12,13 +12,15 @@ using System.Windows.Forms;
 
 namespace Sokszogek_MVP
 {
-    public partial class Form1 : Form, ISokszogView
+    public partial class Form1 : Form, ISokszogView, IHaromszog
     {
         private SokszogPresenter presenter;
         public Form1()
         {
-            presenter = new SokszogPresenter(this);
+            presenter = new SokszogPresenter(this, this);
             InitializeComponent();
+            textBoxOldalC.Hide();
+            labelOldalC.Hide();
         }
 
         public string oldalA
@@ -31,6 +33,12 @@ namespace Sokszogek_MVP
             get => textBoxOldalB.Text;
             set => textBoxOldalB.Text = value;
         }
+        public string oldalC
+        {
+            get => textBoxOldalC.Text;
+            set => textBoxOldalC.Text = value;
+        }
+
         public string Kerulet
         {
             get => textBoxKerulet.Text;
@@ -50,6 +58,26 @@ namespace Sokszogek_MVP
         private void Form1_Load(object sender, EventArgs e)
         {
             presenter.LoadData();
+        }
+
+        private void comboBoxSokszog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            presenter.ShowOldal(comboBoxSokszog.SelectedIndex);
+            if (presenter.oldalCLetezik)
+            {
+                textBoxOldalC.Show();
+                labelOldalC.Show();
+            }
+            else
+            {
+                textBoxOldalC.Hide();
+                labelOldalC.Hide();
+            }
+        }
+
+        private void buttonSzamol_Click(object sender, EventArgs e)
+        {
+            presenter.Calculate();
         }
     }
 }

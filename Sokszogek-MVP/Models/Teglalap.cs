@@ -8,6 +8,7 @@ namespace Sokszogek_MVP.Models
 {
     public class Teglalap : Sokszog
     {
+        // CTOR + TAB + TAB
         public Teglalap(double A, double B): base(A, B)
         {
 

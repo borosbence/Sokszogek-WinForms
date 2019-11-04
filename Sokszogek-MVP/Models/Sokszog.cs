@@ -19,6 +19,5 @@ namespace Sokszogek_MVP.Models
             oldalA = A;
             oldalB = B;
         }
-
     }
 }

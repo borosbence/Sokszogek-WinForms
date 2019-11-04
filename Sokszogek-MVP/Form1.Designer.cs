@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,29 +42,10 @@
             this.textBoxOldalB = new System.Windows.Forms.TextBox();
             this.textBoxOldalC = new System.Windows.Forms.TextBox();
             this.buttonSzamol = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxKerulet, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxTerulet, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxSokszog, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 183);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -79,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 61);
+            this.label2.Location = new System.Drawing.Point(3, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 1;
@@ -88,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 122);
+            this.label3.Location = new System.Drawing.Point(3, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 2;
@@ -97,48 +77,49 @@
             // textBoxKerulet
             // 
             this.textBoxKerulet.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxKerulet.Location = new System.Drawing.Point(103, 64);
+            this.textBoxKerulet.Location = new System.Drawing.Point(73, 36);
             this.textBoxKerulet.Name = "textBoxKerulet";
             this.textBoxKerulet.ReadOnly = true;
-            this.textBoxKerulet.Size = new System.Drawing.Size(94, 20);
+            this.textBoxKerulet.Size = new System.Drawing.Size(120, 20);
             this.textBoxKerulet.TabIndex = 3;
             // 
             // textBoxTerulet
             // 
             this.textBoxTerulet.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxTerulet.Location = new System.Drawing.Point(103, 125);
+            this.textBoxTerulet.Location = new System.Drawing.Point(73, 69);
             this.textBoxTerulet.Name = "textBoxTerulet";
             this.textBoxTerulet.ReadOnly = true;
-            this.textBoxTerulet.Size = new System.Drawing.Size(94, 20);
+            this.textBoxTerulet.Size = new System.Drawing.Size(120, 20);
             this.textBoxTerulet.TabIndex = 4;
             // 
             // comboBoxSokszog
             // 
             this.comboBoxSokszog.FormattingEnabled = true;
-            this.comboBoxSokszog.Location = new System.Drawing.Point(103, 3);
+            this.comboBoxSokszog.Location = new System.Drawing.Point(73, 3);
             this.comboBoxSokszog.Name = "comboBoxSokszog";
-            this.comboBoxSokszog.Size = new System.Drawing.Size(94, 21);
+            this.comboBoxSokszog.Size = new System.Drawing.Size(120, 21);
             this.comboBoxSokszog.TabIndex = 5;
             this.comboBoxSokszog.SelectedIndexChanged += new System.EventHandler(this.comboBoxSokszog_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.59184F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.40816F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelOldalC, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalA, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalB, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBoxOldalC, 1, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(220, 13);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(218, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(196, 183);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label4
@@ -153,7 +134,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 61);
+            this.label5.Location = new System.Drawing.Point(3, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 1;
@@ -162,7 +143,7 @@
             // labelOldalC
             // 
             this.labelOldalC.AutoSize = true;
-            this.labelOldalC.Location = new System.Drawing.Point(3, 122);
+            this.labelOldalC.Location = new System.Drawing.Point(3, 66);
             this.labelOldalC.Name = "labelOldalC";
             this.labelOldalC.Size = new System.Drawing.Size(44, 13);
             this.labelOldalC.TabIndex = 2;
@@ -170,28 +151,28 @@
             // 
             // textBoxOldalA
             // 
-            this.textBoxOldalA.Location = new System.Drawing.Point(101, 3);
+            this.textBoxOldalA.Location = new System.Drawing.Point(62, 3);
             this.textBoxOldalA.Name = "textBoxOldalA";
-            this.textBoxOldalA.Size = new System.Drawing.Size(92, 20);
+            this.textBoxOldalA.Size = new System.Drawing.Size(120, 20);
             this.textBoxOldalA.TabIndex = 3;
             // 
             // textBoxOldalB
             // 
-            this.textBoxOldalB.Location = new System.Drawing.Point(101, 64);
+            this.textBoxOldalB.Location = new System.Drawing.Point(62, 36);
             this.textBoxOldalB.Name = "textBoxOldalB";
-            this.textBoxOldalB.Size = new System.Drawing.Size(92, 20);
+            this.textBoxOldalB.Size = new System.Drawing.Size(120, 20);
             this.textBoxOldalB.TabIndex = 4;
             // 
             // textBoxOldalC
             // 
-            this.textBoxOldalC.Location = new System.Drawing.Point(101, 125);
+            this.textBoxOldalC.Location = new System.Drawing.Point(62, 69);
             this.textBoxOldalC.Name = "textBoxOldalC";
-            this.textBoxOldalC.Size = new System.Drawing.Size(92, 20);
+            this.textBoxOldalC.Size = new System.Drawing.Size(120, 20);
             this.textBoxOldalC.TabIndex = 5;
             // 
             // buttonSzamol
             // 
-            this.buttonSzamol.Location = new System.Drawing.Point(13, 203);
+            this.buttonSzamol.Location = new System.Drawing.Point(12, 118);
             this.buttonSzamol.Name = "buttonSzamol";
             this.buttonSzamol.Size = new System.Drawing.Size(75, 23);
             this.buttonSzamol.TabIndex = 2;
@@ -199,28 +180,46 @@
             this.buttonSzamol.UseVisualStyleBackColor = true;
             this.buttonSzamol.Click += new System.EventHandler(this.buttonSzamol_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel3.Controls.Add(this.textBoxTerulet, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxKerulet, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxSokszog, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 242);
+            this.ClientSize = new System.Drawing.Size(427, 151);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.buttonSzamol);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -235,6 +234,7 @@
         private System.Windows.Forms.TextBox textBoxOldalB;
         private System.Windows.Forms.TextBox textBoxOldalC;
         private System.Windows.Forms.Button buttonSzamol;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
 

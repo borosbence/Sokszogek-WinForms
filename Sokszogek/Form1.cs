@@ -1,5 +1,5 @@
-﻿using Sokszogek_MVP.Presenters;
-using Sokszogek_MVP.Views;
+﻿using Sokszogek.Presenters;
+using Sokszogek.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sokszogek_MVP
+namespace Sokszogek
 {
     public partial class Form1 : Form, ISokszogView, IHaromszog
     {

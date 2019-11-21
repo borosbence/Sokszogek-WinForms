@@ -1,13 +1,13 @@
-﻿using Sokszogek_MVP.Models;
-using Sokszogek_MVP.Repositories;
-using Sokszogek_MVP.Views;
+﻿using Sokszogek.Models;
+using Sokszogek.Repositories;
+using Sokszogek.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sokszogek_MVP.Presenters
+namespace Sokszogek.Presenters
 {
     public class SokszogPresenter
     {

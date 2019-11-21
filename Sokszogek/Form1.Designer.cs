@@ -1,4 +1,4 @@
-﻿namespace Sokszogek_MVP
+﻿namespace Sokszogek
 {
     partial class Form1
     {

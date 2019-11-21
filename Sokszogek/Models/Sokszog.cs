@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sokszogek_MVP.Models
+namespace Sokszogek.Models
 {
     public abstract class Sokszog
     {

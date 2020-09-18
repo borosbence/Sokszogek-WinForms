@@ -14,10 +14,10 @@ namespace Sokszogek.Models
         public abstract double Kerulet();
         public abstract double Terulet();
 
-        public Sokszog(double A, double B)
+        public Sokszog(string A, string B)
         {
-            oldalA = A;
-            oldalB = B;
+            oldalA = Convert.ToDouble(A);
+            oldalB = Convert.ToDouble(B);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Sokszogek.Models
     public class Teglalap : Sokszog
     {
         // CTOR + TAB + TAB
-        public Teglalap(double A, double B): base(A, B)
+        public Teglalap(string A, string B): base(A, B)
         {
 
         }

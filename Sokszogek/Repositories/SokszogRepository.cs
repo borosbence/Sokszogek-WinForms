@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Repositories
 {
-    public class SokszogRepository : ISokszogRepository
+    public class SokszogRepository
     {
         public IList<string> GetSokszogek()
         {

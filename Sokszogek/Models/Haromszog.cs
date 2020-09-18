@@ -9,9 +9,9 @@ namespace Sokszogek.Models
     public class Haromszog : Sokszog
     {
         public double oldalC { get; set; }
-        public Haromszog(double A, double B, double C) : base(A, B)
+        public Haromszog(string A, string B, string C) : base(A, B)
         {
-            oldalC = C;
+            oldalC = Convert.ToDouble(C);
         }
 
         public override double Kerulet()

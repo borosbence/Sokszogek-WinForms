@@ -13,7 +13,7 @@ namespace Sokszogek.Presenters
     {
         private ISokszogView sokszogView;
         private IHaromszog haromszogView;
-        private ISokszogRepository sokszogRepo;
+        private SokszogRepository sokszogRepo = new SokszogRepository();
         private string sokszogNev { get; set; }
         public bool oldalCLetezik { get; set; }
 
@@ -55,8 +55,8 @@ namespace Sokszogek.Presenters
             {
                 case "Téglalap":
                     var teglalap = new Teglalap(
-                        Convert.ToDouble(sokszogView.oldalA),
-                        Convert.ToDouble(sokszogView.oldalB));
+                        sokszogView.oldalA,
+                        sokszogView.oldalB);
                     sokszogView.Kerulet = teglalap.Kerulet().ToString();
                     sokszogView.Terulet = teglalap.Terulet().ToString();
                     break;
@@ -66,9 +66,9 @@ namespace Sokszogek.Presenters
                         return;
                     }
                     var haromszog = new Haromszog(
-                        Convert.ToDouble(sokszogView.oldalA),
-                        Convert.ToDouble(sokszogView.oldalB),
-                        Convert.ToDouble(haromszogView.oldalC));
+                        sokszogView.oldalA,
+                        sokszogView.oldalB,
+                        haromszogView.oldalC);
                     sokszogView.Kerulet = haromszog.Kerulet().ToString();
                     sokszogView.Terulet = haromszog.Terulet().ToString();
                     break;

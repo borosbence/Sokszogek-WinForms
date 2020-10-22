@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Models
 {
-    public class Haromszog : Sokszog
+    class Haromszog : Teglalap
     {
         public double oldalC { get; set; }
-        public Haromszog(string A, string B, string C) : base(A, B)
+
+        public Haromszog(double A, double B, double C) : base(A, B)
         {
-            oldalC = Convert.ToDouble(C);
+            oldalC = C;
         }
 
         public override double Kerulet()
@@ -24,7 +25,10 @@ namespace Sokszogek.Models
             // Hérón képlet
             // https://hu.wikipedia.org/wiki/H%C3%A9r%C3%B3n-k%C3%A9plet
             double s = (oldalA + oldalB + oldalC) / 2;
-            var terulet = Math.Sqrt(s * (s - oldalA) * (s - oldalB) * (s - oldalC));
+            double terulet = Math.Sqrt(s * 
+                                (s - oldalA) * 
+                                (s - oldalB) * 
+                                (s - oldalC));
             return terulet;
         }
     }

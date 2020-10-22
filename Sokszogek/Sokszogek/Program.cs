@@ -17,7 +17,7 @@ namespace Sokszogek
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SokszogForm());
+            Application.Run(new Kalkulator());
         }
     }
 }

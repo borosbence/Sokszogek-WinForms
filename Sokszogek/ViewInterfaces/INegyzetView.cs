@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sokszogek.Views
+namespace Sokszogek.ViewInterfaces
 {
-    public interface IHaromszog
+    interface INegyzetView
     {
-        string oldalC { get; set; }
+        string oldalA { get; }
+        string errorOldalA { get; set; }
     }
 }

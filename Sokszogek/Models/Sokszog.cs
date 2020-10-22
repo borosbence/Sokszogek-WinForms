@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Models
 {
-    public abstract class Sokszog
+    abstract class Sokszog
     {
         public double oldalA { get; set; }
-        public double oldalB { get; set; }
-
         public abstract double Kerulet();
         public abstract double Terulet();
-
-        public Sokszog(string A, string B)
+        public Sokszog(double A)
         {
-            oldalA = Convert.ToDouble(A);
-            oldalB = Convert.ToDouble(B);
+            oldalA = A;
         }
     }
 }

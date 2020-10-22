@@ -1,6 +1,6 @@
 ﻿using Sokszogek.Models;
 using Sokszogek.Repositories;
-using Sokszogek.Views;
+using Sokszogek.ViewInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,35 +9,40 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Presenters
 {
-    public class SokszogPresenter
+    class SokszogPresenter
     {
-        private ISokszogView sokszogView;
-        private IHaromszog haromszogView;
-        private SokszogRepository sokszogRepo = new SokszogRepository();
-        private string sokszogNev { get; set; }
-        public bool oldalCLetezik { get; set; }
+        private ISokszogekView view;
+        private SokszogRepo repo;
+        public bool oldalBLetezik;
+        public bool oldalCLetezik;
+        private string kijeloltSokszog;
 
-        public SokszogPresenter(ISokszogView sokszogV, IHaromszog haromszogV)
+        public SokszogPresenter(ISokszogekView param)
         {
-            sokszogView = sokszogV;
-            haromszogView = haromszogV;
-            sokszogRepo = new SokszogRepository();
+            view = param;
+            repo = new SokszogRepo();
         }
 
         public void LoadData()
         {
-            sokszogView.SokszogList = sokszogRepo.GetSokszogek();
+            view.SokszogList = repo.GetSokszogek();
         }
 
-        public void ShowOldal(int index)
+        public void GetSokszogType(int index)
         {
-            sokszogNev = sokszogRepo.GetNameByIndex(index);
-            switch (sokszogNev)
+            kijeloltSokszog = repo.GetNameByIndex(index);
+            switch (kijeloltSokszog)
             {
+                case "Téglalap":
+                    oldalBLetezik = true;
+                    oldalCLetezik = false;
+                    break;
                 case "Háromszög":
+                    oldalBLetezik = true;
                     oldalCLetezik = true;
                     break;
                 default:
+                    oldalBLetezik = false;
                     oldalCLetezik = false;
                     break;
             }
@@ -45,36 +50,79 @@ namespace Sokszogek.Presenters
 
         public void Calculate()
         {
-            if (string.IsNullOrWhiteSpace(sokszogView.oldalA) 
-                || string.IsNullOrWhiteSpace(sokszogView.oldalB))
+            view.errorOldalA = null;
+            view.errorOldalB = null;
+            view.errorOldalC = null;
+            switch (kijeloltSokszog)
             {
-                return;
-            }
-
-            switch (sokszogNev)
-            {
+                case "Négyzet":
+                    double A = 0;
+                    double.TryParse(view.oldalA, out A);
+                    if (A > 0)
+                    {
+                        var negyzet = new Negyzet(Convert.ToDouble(view.oldalA));
+                        view.Kerulet = negyzet.Kerulet().ToString();
+                        view.Terulet = negyzet.Terulet().ToString();
+                    }
+                    else
+                    {
+                        view.errorOldalA = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
+                    break;
                 case "Téglalap":
-                    var teglalap = new Teglalap(
-                        sokszogView.oldalA,
-                        sokszogView.oldalB);
-                    sokszogView.Kerulet = teglalap.Kerulet().ToString();
-                    sokszogView.Terulet = teglalap.Terulet().ToString();
+                    double B = 0;
+                    double.TryParse(view.oldalA, out A);
+                    double.TryParse(view.oldalB, out B);
+                    if (A > 0 && B > 0)
+                    {
+                        var teglalap = new Teglalap(
+                                Convert.ToDouble(view.oldalA),
+                                Convert.ToDouble(view.oldalB));
+                        view.Kerulet = teglalap.Kerulet().ToString();
+                        view.Terulet = teglalap.Terulet().ToString();
+                    }
+                    else if (A <= 0 && B <= 0)
+                    {
+                        view.errorOldalA = "Kérem adjon meg 0-nál nagyobb számot!";
+                        view.errorOldalB = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
+                    else if (A <= 0)
+                    {
+                        view.errorOldalA = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
+                    else if (B <= 0)
+                    {
+                        view.errorOldalB = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
                     break;
                 case "Háromszög":
-                    if (string.IsNullOrWhiteSpace(haromszogView.oldalC))
+                    double C = 0;
+                    double.TryParse(view.oldalA, out A);
+                    double.TryParse(view.oldalB, out B);
+                    double.TryParse(view.oldalC, out C);
+                    if (A > 0 && B > 0 && C > 0)
                     {
-                        return;
+                        var haromszog = new Haromszog(
+                                Convert.ToDouble(view.oldalA),
+                                Convert.ToDouble(view.oldalB),
+                                Convert.ToDouble(view.oldalC));
+                        view.Kerulet = haromszog.Kerulet().ToString();
+                        view.Terulet = haromszog.Terulet().ToString();
                     }
-                    var haromszog = new Haromszog(
-                        sokszogView.oldalA,
-                        sokszogView.oldalB,
-                        haromszogView.oldalC);
-                    sokszogView.Kerulet = haromszog.Kerulet().ToString();
-                    sokszogView.Terulet = haromszog.Terulet().ToString();
+                    else if (A <= 0)
+                    {
+                        view.errorOldalA = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
+                    else if (B <= 0)
+                    {
+                        view.errorOldalB = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
+                    else if (C <= 0)
+                    {
+                        view.errorOldalC = "Kérem adjon meg 0-nál nagyobb számot!";
+                    }
                     break;
                 default:
-                    sokszogView.Kerulet = null;
-                    sokszogView.Terulet = null;
                     break;
             }
         }

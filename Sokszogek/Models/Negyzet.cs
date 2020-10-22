@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Models
 {
-    class Teglalap : Sokszog
+    class Negyzet : Sokszog
     {
-        public double oldalB { get; set; }
-        public Teglalap(double A, double B) : base(A)
+        public Negyzet(double A) : base(A)
         {
-            oldalB = B;
+
         }
 
         public override double Kerulet()
         {
-            return (2 * oldalA) + (2 * oldalB);
+            return 4 * oldalA;
         }
 
         public override double Terulet()
         {
-            return oldalA * oldalB;
+            return Math.Pow(oldalA, 2);
         }
     }
 }

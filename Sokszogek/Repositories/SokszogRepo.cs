@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sokszogek.Repositories
 {
-    public class SokszogRepository
+    class SokszogRepo
     {
-        public IList<string> GetSokszogek()
+        public List<string> GetSokszogek()
         {
-            List<string> sokszogek = new List<string>
+            List<string> sokszogek = new List<string> 
             {
-                "--Kérem válasszon--",
-                "Téglalap",
-                "Háromszög",
-                "Négyzet"
+                "-- Kérem válasszon --",
+                "Négyzet",
+                "Téglalap",               
+                "Háromszög"
             };
             return sokszogek;
         }
